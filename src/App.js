@@ -1,33 +1,49 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { directive } from '@babel/types';
+
+const list = [
+  {
+    title: 'React',
+    url: 'https://google.com',
+    author: 'Google',
+    number_comment: 3,
+    points: 9,
+    objectId: 0,
+  }
+];
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-
+  constructor(prop) {
+    super(prop);
     this.state = {
-      data: 'Initial data...'
-    }
-    this.updateState = this.updateState.bind(this);
-  };
-  
-  updateState() {
-    this.setState({ data: 'Data updated...' })
+      list: list,
+    };
   }
+
   render() {
-     var helloWorld = "Welcome to the Road to learn React";
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div>
-            {helloWorld}
-         </div>
-        </header>
+        {this.state.list.map(item =>
+          <div key={item.objectId} >
+            <p>
+              <a href={item.url}></a>
+            </p>
+            <p>
+              {item.author}
+            </p>
+            <p>
+              {item.number_comment}
+            </p>
+            <p>
+              {item.points}
+            </p>
+          </div>
+        )}
       </div>
-    );
+    )
   }
 }
+
 export default App;
+
 
