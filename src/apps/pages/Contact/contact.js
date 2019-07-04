@@ -1,7 +1,6 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 
-class About extends React.Component {
+class Contact extends Component {
     render() {
        return (
           <div>
@@ -10,4 +9,5 @@ class About extends React.Component {
        )
     }
  }
- export {Contact};
+
+ export default Contact;

@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class Home extends React.Component {
   constructor(props) {
@@ -19,7 +17,6 @@ class Home extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <div>
             <ul>
             <li>Home</li>
@@ -28,9 +25,7 @@ class Home extends React.Component {
             </ul>
             {this.props.children}
          </div>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+
             <button onClick={this.updateState}>CLICK</button>
             <h4>{this.state.data}</h4>
         </header>
@@ -38,4 +33,5 @@ class Home extends React.Component {
     );
   }
 }
+
 export default Home;
