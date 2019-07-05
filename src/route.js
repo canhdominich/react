@@ -5,6 +5,8 @@ import About from '../src/apps/pages/About/about';
 import Contact from '../src/apps/pages/Contact/contact';
 import Search from '../src/apps/pages/Search/search';
 import Counter from '../src/apps/pages/State/local_state';
+import CounterComponent from '../src/apps/pages/State/stateless_components';
+import Interact from '../src/apps/pages/Form/interact';
 
 const ROUTES = {
     Home: '/home',
@@ -12,6 +14,8 @@ const ROUTES = {
     Contact: '/contact',
     Search: '/search',
     Counter : '/counter',
+    CounterComponent : '/counterpresenter',
+    Interact : '/interact',
 }
 
 class AppRouter extends Component {
@@ -25,6 +29,8 @@ class AppRouter extends Component {
                 <Route path={ROUTES.Contact} component={Contact} />
                 <Route path={ROUTES.Search} component={Search} />
                 <Route path={ROUTES.Counter} component={Counter} />
+                <Route path={ROUTES.CounterComponent} component={CounterComponent} />
+                <Route path={ROUTES.Interact} component={Interact} />
             </Router>
         );
     }

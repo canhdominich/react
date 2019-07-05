@@ -16,19 +16,12 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
           <div>
-            <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            </ul>
             {this.props.children}
          </div>
 
             <button onClick={this.updateState}>CLICK</button>
             <h4>{this.state.data}</h4>
-        </header>
       </div>
     );
   }
