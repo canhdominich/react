@@ -19,7 +19,6 @@ const ROUTES = {
 }
 
 class AppRouter extends Component {
-
     render() {
         return (
             <Router>

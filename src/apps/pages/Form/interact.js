@@ -47,11 +47,13 @@ class Interact extends Component {
   }
 
   render() {
+    const { searchTerm } = this.state;
     return (
       <div className="App">
         <form>
           <input
             type="text"
+            value={searchTerm}
             onChange={this.onSearchChange}
           />
         </form>
