@@ -24,6 +24,7 @@ class Api extends Component {
         this.state = {
             wikis: [],
             searchTerm: DEFAULT_QUERY,
+            error: null,
         };
 
         this.setSearchResult = this.setSearchResult.bind(this);
@@ -40,7 +41,7 @@ class Api extends Component {
         fetch(`${PATH_BASE}${searchTerm}`)
             .then(response => response.json())
             .then(wikis => this.setSearchResult(wikis[0]))
-            .catch(error => error);
+            .catch(error => this.setState({ error }));
     }
 
     setSearchResult(wikis) {
@@ -55,11 +56,11 @@ class Api extends Component {
         fetch(`${PATH_BASE}${searchTerm}`)
             .then(response => response.json())
             .then(wikis => this.setSearchResult(wikis))
-            .catch(error => error);
+            .catch(error => this.setState({ error }));
     }
 
     render() {
-        const { searchTerm, wikis, onChange } = this.state;
+        const { searchTerm, wikis, error } = this.state;
         if (!wikis) return null;
 
         return (
@@ -80,9 +81,14 @@ class Api extends Component {
                     </form>
                 </div>
 
-                <Show
-                    wikis={wikis}
-                />
+                {
+                    error
+                        ? <p>Something went wrong.</p>
+                        : <Show
+                            wikis={wikis}
+                        />
+                }
+
             </div>
         );
     }
