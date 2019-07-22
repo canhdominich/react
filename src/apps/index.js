@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import AppRouter from '../route';
 import DemoProp from './pages/Prop/demo_props';
 // import Api from './pages/Api/fetching_data';
-import Api from './pages/Api/axios';
+// import Api from './pages/Api/axios';
+import Api from './pages/Api/fetching_wiki';
 
 const list = [
     {
@@ -25,9 +26,9 @@ class App extends Component {
     render() {
         return (
             <div>
-               {/* <AppRouter/> */}
+               <AppRouter/>
                {/* <DemoProp title = {list} /> */}
-               <Api/>
+               {/* <Api/> */}
             </div>
         );
     }

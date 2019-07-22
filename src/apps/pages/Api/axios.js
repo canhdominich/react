@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const PATH_BASE = 'http://localhost:5000/wikis';
 
-class Api extends Component {
+class AxiosApi extends Component {
     constructor(props) {
         super(props);
 
@@ -44,4 +44,4 @@ class Api extends Component {
     }
 }
 
-export default Api;
+export default AxiosApi;
